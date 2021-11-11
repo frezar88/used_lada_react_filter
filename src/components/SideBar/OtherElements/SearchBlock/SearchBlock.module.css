@@ -1,0 +1,15 @@
+.label {
+    width: 100%;
+}
+
+.input {
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 14px;
+    color: #000000;
+    padding: 10px;
+    border: none;
+}
+.input:focus {
+  outline: none;
+}

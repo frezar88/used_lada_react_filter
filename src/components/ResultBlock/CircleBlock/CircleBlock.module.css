@@ -1,0 +1,12 @@
+.span {
+    margin: 0 3px;
+    position: relative;
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #ED1C24;
+    top: -2px;
+
+}
+

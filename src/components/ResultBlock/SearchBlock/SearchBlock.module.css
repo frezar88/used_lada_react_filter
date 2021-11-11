@@ -1,0 +1,31 @@
+.div{
+    flex-basis: 60%;
+}
+
+.label {
+    position: relative;
+}
+
+.label:before {
+    position: absolute;
+    content: url('./search.png');
+    left: 10px;
+    top: -3px;
+    z-index: 1;
+}
+
+.input {
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    border-radius: 4px;
+    padding: 10px 15px 10px 40px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #000000;
+    border: none;
+}
+.input:focus {
+outline: none;
+}

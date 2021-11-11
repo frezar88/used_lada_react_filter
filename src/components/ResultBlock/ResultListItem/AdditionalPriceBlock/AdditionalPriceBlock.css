@@ -1,0 +1,126 @@
+.additional_price_block {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-left: none;
+    border-right: none;
+    border-top: 2px solid;
+    border-bottom: 2px solid;
+    border-image: linear-gradient(to right, #fff, #b6b5b5, #b6b5b5, #fff) 47% 0%;
+    border-image-slice: 1;
+}
+
+additional_price_block .switch-credit,
+additional_price_block .switch-appraise {
+    padding: 10px 0;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    color: #000000;
+    display: flex;
+    align-items: flex-start;
+}
+
+.additional_price_block .switch-credit label,
+.additional_price_block .switch-appraise label {
+    cursor: pointer;
+}
+
+.additional_price_block .switch-credit label:last-child,
+.additional_price_block .switch-appraise label:last-child {
+    margin-left: 15px;
+}
+
+.additional_price_block .switch-appraise label div:last-child {
+    text-decoration: underline;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.switch-credit, .switch-appraise {
+    padding: 10px 0;
+    font-family: Montserrat-Regular;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 21px;
+    color: #000000;
+    display: flex;
+    align-items: flex-start;
+}
+
+.additional_price_block .switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 24px;
+}
+
+.additional_price_block .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.additional_price_block .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+}
+
+.additional_price_block .slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+}
+
+.additional_price_block input:checked + .slider {
+    background-color: #ed1c24;
+}
+
+.additional_price_block input:focus + .slider {
+    box-shadow: 0 0 1px #fff;
+}
+
+.additional_price_block input:checked + .slider:before {
+    transform: translateX(16px);
+}
+
+/* Rounded sliders */
+.additional_price_block .slider.round {
+    border-radius: 34px;
+}
+
+.additional_price_block .slider.round:before {
+    border-radius: 50%;
+}
+
+.additional_price_block .switch-appraise label div,
+.additional_price_block .switch-credit label div {
+    padding: 2px 0;
+}
+
+.additional_price_block .switch-appraise label div,
+.additional_price_block .switch-appraise label span,
+.additional_price_block .switch-credit label div,
+.additional_price_block .switch-credit label span {
+    font-family: Montserrat-Regular;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+    width: 100%;
+}
+

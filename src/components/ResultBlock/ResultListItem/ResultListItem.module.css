@@ -1,0 +1,161 @@
+
+.item {
+    width: 100%;
+    background: #ffffff;
+    border-radius: 4px;
+}
+
+.img {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.img img {
+    width: 100%;
+}
+
+.car_name {
+    padding: 0 15px 5px 15px;
+}
+
+.car_name p {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    text-transform: uppercase;
+    color: #000000;
+    cursor: pointer;
+    margin: 0;
+}
+
+.car_name p:hover {
+    text-decoration: underline;
+}
+
+.features {
+    padding: 0 15px 20px 15px;
+}
+
+.features ul {
+    padding: 0;
+    margin: 0;
+}
+
+.features li:first-child {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    list-style: none;
+}
+
+.features li:first-child {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    list-style: none;
+}
+
+.features li:first-child p {
+    margin: 0;
+    line-height: 20px;
+}
+
+.features li:first-child p span {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+}
+
+.mileage span {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+}
+
+.features li:nth-child(2) {
+    margin-top: 25px;
+    list-style: none;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+}
+
+.features li:nth-child(3) {
+    margin-top: 20px;
+    list-style: none;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+
+}
+
+.features li:nth-child(3) p {
+    font-style: normal;
+    font-weight: bolder;
+    font-size: 24px;
+    line-height: 29px;
+    color: #000000;
+    margin: 0;
+}
+
+.features li:nth-child(3) p span {
+
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+    color: #000000;
+}
+
+.about_price {
+    margin-top: 5px;
+    list-style: none;
+}
+
+.about_price p {
+    cursor: pointer;
+    padding-left: 20px;
+    position: relative;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    text-decoration-line: underline;
+    color: #000000;
+}
+
+.about_price p:before {
+    content: url('/src/components/ResultBlock/ResultListItem/FeaturesList/Vector.svg');
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.location {
+    padding: 0 15px 20px 15px;
+}
+
+.location a {
+    position: relative;
+    padding-left: 20px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    color: #4f4f4f;
+}
+
+.location a:before {
+    position: absolute;
+    content: url('./location.svg');
+    top: 0;
+    left: 0;
+}
