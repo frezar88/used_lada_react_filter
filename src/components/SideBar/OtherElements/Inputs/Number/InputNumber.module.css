@@ -1,0 +1,47 @@
+.cars-in-stock-side-bar__container {
+    margin-top: 25px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 15px;
+}
+
+.cars-in-stock-side-bar__wrapper label {
+    position: relative;
+
+}
+
+.cars-in-stock-side-bar input[type="number"], .cars-in-stock-side-bar input[type="number"]:hover, .cars-in-stock-side-bar input[type="number"]:focus {
+    appearance: none;
+    -moz-appearance: textfield;
+}
+
+.cars-in-stock-side-bar__wrapper label input {
+    box-sizing: border-box;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+    appearance: none;
+    -moz-appearance: textfield;
+
+}
+
+.inp-no-checked input {
+    font-family: Montserrat-Regular;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: none;
+    font-size: 15px;
+    font-weight: 600;
+}
+.inp-no-checked input:disabled {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: none;
+    background: #fff;
+}
+.inp-no-checked input:focus {
+    outline: none;
+    pointer-events: none;
+}

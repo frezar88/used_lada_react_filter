@@ -1,26 +1,34 @@
 import React, {useEffect, useState} from 'react';
 import s from './sortPyramid.module.css'
 
-const SortPyramid = (props) => {
+const SortPyramid = ({stateInput,setStateSort}) => {
     const [stateClass, setStateClass] = useState(s.div)
-    const [stateSort, setStateSort] = useState(0)
+    const [stateSortInner, setStateSortInner] = useState(0)
 
     useEffect(() => {
-        if (props.stateInput) {
-            setStateClass(s.active_asc)
-            if (stateSort) {
-                setStateClass(s.active_desc)
-            }
-        } else {
-            setStateClass(s.div)
-        }
-    }, [props.stateInput, stateSort])
-    const setSort = () => {
-        if (props.stateInput) {
-            if (stateSort) {
-                setStateSort(0)
+
+            if (stateInput ) {
+                setStateClass(s.active_asc)
+                if (stateSortInner) {
+                    setStateClass(s.active_desc)
+                }
             } else {
-                setStateSort(stateSort + 1)
+                setStateClass(s.div)
+            }
+            if (setStateSort){
+                setStateSort({
+                    status:stateInput,
+                    sortType:stateSortInner
+                })
+            }
+
+    }, [stateInput, stateSortInner,setStateSort,])
+    const setSort = () => {
+        if (stateInput) {
+            if (stateSortInner) {
+                setStateSortInner(0)
+            } else {
+                setStateSortInner(stateSortInner + 1)
             }
         }
     }

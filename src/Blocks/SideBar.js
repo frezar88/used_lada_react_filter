@@ -1,38 +1,23 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import s from './SideBar.module.css'
-import CertifiedAutosBlock from "../components/SideBar/CertifiedAutosBlock/CertifiedAutosBlock";
-import PriceBlock from "../components/SideBar/PriceBlock/PriceBlock";
-import YearsBlock from "../components/SideBar/YearsBlock/YearsBlock";
-import BrandBlock from "../components/SideBar/BrandBlock/BrandBlock";
-import ModelBlock from "../components/SideBar/ModelBlock/ModelBlock";
-import EngineTypeBlock from "../components/SideBar/EngineTypeBlock/EngineTypeBlock";
-import EngineVolumeBlock from "../components/SideBar/EngineVolumeBlock/EngineVolumeBlock";
-import EngineCapacityBlock from "../components/SideBar/EngineCapacityBlock/EngineCapacityBlock";
-import TransmissionBlock from "../components/SideBar/TransmissionBlock/TransmissionBlock";
-import DriveBlock from "../components/SideBar/DriveBlock/DriveBlock";
-import BodyTypeBlock from "../components/SideBar/BodyTypeBlock/BodyTypeBlock";
-import СarPositionBlock from "../components/SideBar/CarPositionBlock/СarPositionBlock";
-import SortBlock from "../components/SideBar/SortBlock/SortBlock";
+import {getFilters} from "../http/Requests";
+import SideBarForm from "../components/SideBar/SideBarForm/SideBarForm";
 
 
-const SideBar = () => {
+const SideBar = ({setCars}) => {
+    const [filters, setFilters] = useState('')
+    useEffect(() => {
+        getFilters().then(data => {
+            setFilters(data.data.filters)
+        })
+    }, [])
     return (
-        <div className={s.sideBar}>
-            <form>
-                <CertifiedAutosBlock/>
-                <PriceBlock/>
-                <YearsBlock/>
-                <BrandBlock/>
-                <ModelBlock/>
-                <EngineTypeBlock/>
-                <EngineVolumeBlock/>
-                <EngineCapacityBlock/>
-                <TransmissionBlock/>
-                <DriveBlock/>
-                <BodyTypeBlock/>
-                <СarPositionBlock/>
-                <SortBlock/>
-            </form>
+        <div className={s.sideBar} style={filters ? {padding:'30px 20px'}:{padding: '0'}}>
+            {filters ?
+                <SideBarForm  setCars={setCars}  filters={filters}/>
+                :
+                false
+            }
         </div>
     );
 };

@@ -8,7 +8,7 @@
 
 .label:before {
     position: absolute;
-    content: url('./search.png');
+    content: url('search.png');
     left: 10px;
     top: -3px;
     z-index: 1;

@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
 import Title from "../OtherElements/Title/Title";
-import s from "../SideBar.module.css";
+import s from "./SortBlock.module.css";
 import InputCheckBox from "../OtherElements/Inputs/CheckBox/InputCheckBox";
 import SortPyramid from "../OtherElements/sortPyramid/sortPyramid";
 
 
-const SortBlock = () => {
+const SortBlock = ({setStateSort}) => {
     const [stateInput,setStateInput]=useState(false)
     return (
         <div>
@@ -16,16 +16,17 @@ const SortBlock = () => {
                 style={
                     {
                         display: 'grid',
-                        gridTemplateColumns: '1fr 1fr',
+                        gridTemplateColumns: 'auto 1fr',
                         listStyle: 'none',
-                        alignItems: 'center'
+                        alignItems: 'center',
+                        gridGap:10
                     }}
             >
                 <li className={s.li} style={{listStyle: 'none'}}>
-                    <InputCheckBox setStateInput={setStateInput} data-name={'transmission'} text={'По цене'}/>
+                    <InputCheckBox  setStateInput={setStateInput} data-type={'sort'} data-name={'transmission'} text={'По цене'}/>
                 </li>
                 <li >
-                    <SortPyramid stateInput={stateInput}   />
+                    <SortPyramid  stateInput={stateInput}   />
                 </li>
             </ul>
         </div>

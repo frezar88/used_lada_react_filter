@@ -1,9 +1,7 @@
-
 .ul{
     padding: 5px 0 0 0;
     overflow: hidden;
     transition: 1.6s;
-    margin-top: 20px;
 }
 .li{
 
@@ -12,5 +10,5 @@
 }
 .li:first-child{
 
-    padding: 0 0 4px 0;
+    padding: 0 0 0px 0;
 }

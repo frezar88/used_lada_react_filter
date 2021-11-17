@@ -1,3 +1,6 @@
+.div{
+    position: relative;
+}
 .label {
     width: 100%;
 }
@@ -9,7 +12,36 @@
     color: #000000;
     padding: 10px;
     border: none;
+
 }
+
 .input:focus {
-  outline: none;
+    outline: none;
+}
+
+.advance-search-brand {
+    overflow: hidden;
+
+    transition: .3s;
+    box-sizing: border-box;
+
+    background: #fff;
+    position: absolute;
+    z-index: 22;
+    width: 100%;
+}
+
+.ul {
+    padding: 0px 0px 10px 0;
+}
+.ul li{
+
+    padding: 5px 10px;
+}
+.ul li:hover{
+
+    background:#00000010 ;
+    cursor: pointer;
+    text-decoration: underline;
+
 }

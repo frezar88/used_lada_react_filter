@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState, useRef } from "react";
-import "./MultiRangeSlider.css";
+import s from "./MultiRangeSlider.module.css";
 
-const MultiRangeSlider = ({ min, max, onChange,blockName }) => {
+const MultiRangeSlider = ({ min, max, onChange,blockName ,dataMax,dataMin}) => {
     const [minVal, setMinVal] = useState(min);
     const [maxVal, setMaxVal] = useState(max);
     const minValRef = useRef(null);
@@ -39,8 +39,10 @@ const MultiRangeSlider = ({ min, max, onChange,blockName }) => {
     }, [minVal, maxVal, onChange,blockName]);
 
     return (
-        <div className="container">
+        <div className={s['container']}>
             <input
+                data-type={blockName}
+                data-name={dataMin}
                 type="range"
                 min={min}
                 max={max}
@@ -51,9 +53,11 @@ const MultiRangeSlider = ({ min, max, onChange,blockName }) => {
                     setMinVal(value);
                     event.target.value = value.toString();
                 }}
-                className={"thumb thumb--zindex-3thumb--zindex-5"}
+                className={s.thumb + ' ' + s["thumb thumb--zindex-3thumb--zindex-5"]}
             />
             <input
+                data-type={blockName}
+                data-name={dataMax}
                 type="range"
                 min={min}
                 max={max}
@@ -64,12 +68,12 @@ const MultiRangeSlider = ({ min, max, onChange,blockName }) => {
                     setMaxVal(value);
                     event.target.value = value.toString();
                 }}
-                className="thumb thumb--zindex-4"
+                className={s.thumb+' ' +s['thumb thumb--zindex-4']}
             />
 
-            <div className="slider">
-                <div className="slider__track" />
-                <div ref={range} className="slider__range" />
+            <div className={s.slider}>
+                <div className={s["slider__track"]} />
+                <div ref={range} className={s["slider__range"]} />
                 <div>
 
                     {/*<div className="slider__left-value">{minVal}</div>*/}

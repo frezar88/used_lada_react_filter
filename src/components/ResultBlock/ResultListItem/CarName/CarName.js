@@ -1,10 +1,10 @@
 import React from 'react';
 import s from "../ResultListItem.module.css";
 
-const CarName = () => {
+const CarName = ({name}) => {
     return (
         <div className={s.car_name}>
-            <p>SANDERO - II</p>
+            <p>{name}</p>
         </div>
     );
 };

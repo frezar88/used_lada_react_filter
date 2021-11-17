@@ -6,35 +6,36 @@ import s from "../SideBar.module.css";
 import ShowCloseMoreBlock from "../ShowCloseMoreBlock/ShowCloseMoreBlock";
 
 
-const BrandBlock = () => {
-    const [heightState,setHeightState]=useState(false)
+const BrandBlock = ({brand}) => {
+
+    const [heightState, setHeightState] = useState(false)
 
     return (
-        <div>
+        <div >
             <Title text={'Марка'}/>
-            <SearchBlock/>
+            <SearchBlock
+                keyObject={'brand'}
+                data={brand}
+                nameBlock={'search-brand'}
+
+            />
+
             <ul
                 className={s.ul + ' ul'}
-                style={{maxHeight:heightState?'900':'110px'}}
+                style={{maxHeight: heightState ? 'unset' : '110px'}}
             >
-                <li className={s.li}>
-                    <InputCheckBox data-name={'brand'} text={'Lada'}/>
-                </li>
-                <li className={s.li}>
-                    <InputCheckBox data-name={'brand'} text={'Renault'}/>
-                </li>
-                <li className={s.li}>
-                    <InputCheckBox data-name={'brand'} text={'Renault'}/>
-                </li>
-                <li className={s.li}>
-                    <InputCheckBox data-name={'brand'} text={'Renault'}/>
-                </li>
-                <li className={s.li}>
-                    <InputCheckBox data-name={'brand'} text={'Renault'}/>
-                </li>
-
+                {
+                    brand[0].options ?
+                        brand[0].options.map((({brand}) =>
+                                <li key={brand} className={s.li}>
+                                    <InputCheckBox data-type={'brand'} data-name={brand} text={brand}/>
+                                </li>
+                        ))
+                        :
+                        false
+                }
             </ul>
-            <ShowCloseMoreBlock state={heightState} setState={setHeightState}/>
+            <ShowCloseMoreBlock countItems={brand[0].options.length} state={heightState} setState={setHeightState}/>
         </div>
     );
 };

@@ -2,17 +2,29 @@ import React from 'react';
 import s from './ShowCloseMoreBlock.module.css'
 
 const ShowCloseMoreBlock = (props) => {
-    const statusBlock = () => {
-        if (props.state){
+
+    const statusBlock = (e) => {
+        if (props.state) {
             props.setState(false)
-        }else{
+
+        } else {
             props.setState(true)
+
         }
     }
     return (
-        <div>
-            <p style={{color:props.state?'red':'black'}} onClick={statusBlock} className={s.p}>{props.state ? 'скрыть все': 'показать все'}</p>
-        </div>
+        <>
+            {
+                props.countItems >4 ?
+                    <div color={s.div1}>
+                        <p style={{color: props.state ? 'red' : 'black'}} onClick={(e) => statusBlock(e)}
+                           className={s.p}>{props.state ? 'скрыть все' : 'показать все'}</p>
+                    </div>
+                    :
+                    false
+            }
+        </>
+
     );
 };
 

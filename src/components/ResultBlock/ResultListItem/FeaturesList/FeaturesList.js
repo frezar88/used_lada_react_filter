@@ -2,37 +2,39 @@ import React from 'react';
 import s from "../ResultListItem.module.css";
 import CircleBlock from "../../CircleBlock/CircleBlock";
 
-const FeaturesList = () => {
+const  FeaturesList = ({price,odometr,generashion,year,kuzov,drive_type,count_seats,transmission,engine}) => {
+
+
     return (
         <div className={s.features}>
             <ul>
                 <li>
                     <div>
-                        <p>
-                            <span>1 поколение</span>
+                        <p >
+                            <span >{generashion + ' поколение'} </span>
                             <CircleBlock/>
-                            <span>2015 год</span>
+                            <span>{year+ ' год'} </span>
                             <br/>
-                            <span>кроссовер</span>
+                            <span>{kuzov}</span>
                             <CircleBlock/>
-                            <span>передний</span>
-                            <CircleBlock/>
-                            <span>5 мест</span>
+                            <span>{drive_type}</span>
+                            <br/>
+                            <span>{count_seats+ ' мест'} </span>
                         </p>
                     </div>
                     <div className={s.mileage}>
-                        <span >94875 км</span>
+                        <span >{odometr + ' км'}</span>
                     </div>
                 </li>
                 <li>
-                    <div>1.6 Бензиновый</div>
-                    <span>82 л.с</span>
+                    <div>{engine['capacity_engine'] + ' л '+ engine['type']}</div>
+                    <span>{engine['power_hp']+ ' л.с'}</span>
                     <CircleBlock/>
-                    <span>Механическая</span>
+                    <span>{transmission}</span>
                 </li>
                 <li>
                     <p>
-                        20000  BYN
+                        {price + ' BYN'}
                     </p>
                 </li>
                 <li className={s.about_price}>

@@ -4,46 +4,30 @@ import s from "../SideBar.module.css";
 import InputCheckBox from "../OtherElements/Inputs/CheckBox/InputCheckBox";
 import ShowCloseMoreBlock from "../ShowCloseMoreBlock/ShowCloseMoreBlock";
 
-const EngineVolumeBlock = () => {
-    const [heightState,setHeightState]=useState(false)
+const EngineVolumeBlock = ({volume}) => {
+    const [heightState, setHeightState] = useState(false)
     return (
         <div>
             <Title text={'Обьём двигателя'}/>
 
             <ul
                 className={s.ul + ' ul'}
-                style={{maxHeight:heightState?'900':'110px'}}
+                style={{maxHeight: heightState ? 'unset' : '110px'}}
             >
-                <li className={s.li}>
-                    <InputCheckBox data-name={'engineVolume'} text={'1.1'}/>
-                </li>
-                <li className={s.li}>
-                    <InputCheckBox data-name={'engineVolume'} text={'1.2'}/>
-                </li>
-                <li className={s.li}>
-                    <InputCheckBox data-name={'engineVolume'} text={'1.3'}/>
-                </li>
-                <li className={s.li}>
-                    <InputCheckBox data-name={'engineVolume'} text={'1.4'}/>
-                </li>
-                <li className={s.li}>
-                    <InputCheckBox data-name={'engineVolume'} text={'2.2'}/>
-                </li>
-                <li className={s.li}>
-                    <InputCheckBox data-name={'engineVolume'} text={'3.2'}/>
-                </li>
-                <li className={s.li}>
-                    <InputCheckBox data-name={'engineVolume'} text={'4.2'}/>
-                </li>
-                <li className={s.li}>
-                    <InputCheckBox data-name={'engineVolume'} text={'1.2'}/>
-                </li>
-                <li className={s.li}>
-                    <InputCheckBox data-name={'engineVolume'} text={'1.2'}/>
-                </li>
-
+                {volume[0].options ?
+                    volume[0].options.sort((a, b) => a['engine_volume'] - b['engine_volume'])
+                        .filter(item=>item['engine_volume'])
+                        .map((({engine_volume}) =>
+                            <li key={engine_volume} className={s.li}>
+                                <InputCheckBox data-type={"engineVolume"} data-name={engine_volume}
+                                               text={engine_volume}/>
+                            </li>
+                    ))
+                    :
+                    false
+                }
             </ul>
-            <ShowCloseMoreBlock state={heightState} setState={setHeightState}/>
+            <ShowCloseMoreBlock  countItems={volume[0].options.length} state={heightState} setState={setHeightState}/>
         </div>
     );
 };

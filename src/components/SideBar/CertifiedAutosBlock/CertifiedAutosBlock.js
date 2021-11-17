@@ -7,7 +7,7 @@ import InputCheckBox from "../OtherElements/Inputs/CheckBox/InputCheckBox";
 const CertifiedAutosBlock = () => {
     return (
         <div>
-            <InputCheckBox dataName={'certified-cars'} text={'Сертифицированные авто'} />
+            <InputCheckBox data-type={'certified-cars'} data-name={'certified-cars'} text={'Сертифицированные авто'} />
         </div>
     );
 };

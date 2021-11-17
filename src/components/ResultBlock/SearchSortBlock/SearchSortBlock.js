@@ -3,11 +3,13 @@ import SearchBlock from "../SearchBlock/SearchBlock";
 import SortBlock from "../SortBlock/SortBlock";
 import s from './SearchSortBlock.module.css'
 
-const SearchSortBlock = () => {
+const SearchSortBlock = ({setStateSort,setStateSearch,stateSearch}) => {
+
+
     return (
         <div className={s.div} >
-            <SearchBlock/>
-            <SortBlock/>
+            <SearchBlock stateSearch={stateSearch} setStateSearch={setStateSearch}/>
+            <SortBlock  setStateSort={setStateSort} />
         </div>
     );
 };

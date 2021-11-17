@@ -33,12 +33,25 @@
 .input {
     margin-right: 10px;
     opacity: 0;
+    margin-bottom: 7px;
 
 }
 
 .text {
     font-weight: 500;
     font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    -khtml-user-select: none;    /* Konqueror */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* Internet Explorer/Edge */
+    user-select: none;
+}
+.small_text{
+    font-weight: 500;
+    font-size: 12px;
     line-height: 17px;
     color: #000000;
     -webkit-touch-callout: none; /* iOS Safari */

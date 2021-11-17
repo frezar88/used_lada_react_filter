@@ -5,43 +5,34 @@ import s from "../SideBar.module.css";
 import InputCheckBox from "../OtherElements/Inputs/CheckBox/InputCheckBox";
 import ShowCloseMoreBlock from "../ShowCloseMoreBlock/ShowCloseMoreBlock";
 
-const ModelBlock = () => {
-    const [heightState,setHeightState]=useState(false)
+const ModelBlock = ({model}) => {
+
+    const [heightState, setHeightState] = useState(false)
     return (
         <div>
             <Title text={'Модель'}/>
-            <SearchBlock/>
+            <SearchBlock
+                keyObject={'model'}
+                data={model}
+                nameBlock={'search-model'}
+
+            />
             <ul
                 className={s.ul + ' ul'}
-                style={{maxHeight:heightState?'900':'110px'}}
+                style={{maxHeight: heightState ? 'unset' : '110px'}}
             >
-                <li className={s.li}>
-                    <InputCheckBox data-name={'model'} text={'Sandero'}/>
-                </li>
-                <li className={s.li}>
-                    <InputCheckBox data-name={'model'} text={'Duster'}/>
-                </li>
-                <li className={s.li}>
-                    <InputCheckBox data-name={'model'} text={'Logan'}/>
-                </li>
-                <li className={s.li}>
-                    <InputCheckBox data-name={'model'} text={'Kaptur'}/>
-                </li>
-                <li className={s.li}>
-                    <InputCheckBox data-name={'model'} text={'Renault'}/>
-                </li>
-                <li className={s.li}>
-                    <InputCheckBox data-name={'model'} text={'Renault'}/>
-                </li>
-                <li className={s.li}>
-                    <InputCheckBox data-name={'model'} text={'Renault'}/>
-                </li>
-                <li className={s.li}>
-                    <InputCheckBox data-name={'model'} text={'Renault'}/>
-                </li>
+                {model[0].options ?
+                    model[0].options.map((({model}) =>
+                            <li key={model} className={s.li}>
+                                <InputCheckBox  data-type={'model'} data-name={model} text={model}/>
+                            </li>
 
-            </ul>
-            <ShowCloseMoreBlock state={heightState} setState={setHeightState}/>
+                    ))
+                    :
+                    false
+                }
+            < /ul>
+            <ShowCloseMoreBlock  countItems={model[0].options.length} state={heightState} setState={setHeightState}/>
 
         </div>
     );
