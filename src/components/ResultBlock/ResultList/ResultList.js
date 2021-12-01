@@ -4,6 +4,9 @@ import ResultListItem from "../ResultListItem/ResultListItem";
 
 
 const ResultList = ({resultData,stateSearch}) => {
+
+
+
     return (
         <div className={s.div}>
             {

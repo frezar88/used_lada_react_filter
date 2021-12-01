@@ -1,24 +1,24 @@
 import React, {useState} from 'react';
 import Title from "../OtherElements/Title/Title";
-import SearchBlock from "../OtherElements/SearchBlock/SearchBlock";
+
 import InputCheckBox from "../OtherElements/Inputs/CheckBox/InputCheckBox";
 import s from "../SideBar.module.css";
 import ShowCloseMoreBlock from "../ShowCloseMoreBlock/ShowCloseMoreBlock";
 
 
-const BrandBlock = ({brand}) => {
+const BrandBlock = ({brand,sortDataCars}) => {
 
     const [heightState, setHeightState] = useState(false)
 
     return (
         <div >
             <Title text={'Марка'}/>
-            <SearchBlock
-                keyObject={'brand'}
-                data={brand}
-                nameBlock={'search-brand'}
+            {/*<SearchBlock*/}
+            {/*    keyObject={'brand'}*/}
+            {/*    data={brand}*/}
+            {/*    nameBlock={'search-brand'}*/}
 
-            />
+            {/*/>*/}
 
             <ul
                 className={s.ul + ' ul'}
@@ -26,11 +26,12 @@ const BrandBlock = ({brand}) => {
             >
                 {
                     brand[0].options ?
-                        brand[0].options.map((({brand}) =>
+                        brand[0].options.map(({brand}) =>
+
                                 <li key={brand} className={s.li}>
                                     <InputCheckBox data-type={'brand'} data-name={brand} text={brand}/>
                                 </li>
-                        ))
+                        )
                         :
                         false
                 }

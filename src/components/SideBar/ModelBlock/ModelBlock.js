@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import SearchBlock from "../OtherElements/SearchBlock/SearchBlock";
+
 import Title from "../OtherElements/Title/Title";
 import s from "../SideBar.module.css";
 import InputCheckBox from "../OtherElements/Inputs/CheckBox/InputCheckBox";
@@ -11,12 +11,12 @@ const ModelBlock = ({model}) => {
     return (
         <div>
             <Title text={'Модель'}/>
-            <SearchBlock
-                keyObject={'model'}
-                data={model}
-                nameBlock={'search-model'}
+            {/*<SearchBlock*/}
+            {/*    keyObject={'model'}*/}
+            {/*    data={model}*/}
+            {/*    nameBlock={'search-model'}*/}
 
-            />
+            {/*/>*/}
             <ul
                 className={s.ul + ' ul'}
                 style={{maxHeight: heightState ? 'unset' : '110px'}}
